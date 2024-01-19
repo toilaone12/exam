@@ -73,6 +73,38 @@
     </div>
 </li>
 
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuestion"
+        aria-expanded="true" aria-controls="collapseQuestion">
+        <i class="fa-solid fa-question"></i>
+        <span>Câu hỏi</span>
+    </a>
+    <div id="collapseQuestion" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Thao tác:</h6>
+            <a class="collapse-item" href="{{route('question.list')}}">Danh sách</a>
+        </div>
+    </div>
+</li>
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAssignment"
+        aria-expanded="true" aria-controls="collapseAssignment">
+        <i class="fa-solid fa-terminal"></i>
+        <span>Đề bài</span>
+    </a>
+    <div id="collapseAssignment" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Thao tác:</h6>
+            <a class="collapse-item" href="{{route('assignment.list')}}">Danh sách</a>
+        </div>
+    </div>
+</li>
+
 <!-- Divider -->
 <hr class="sidebar-divider">
 

@@ -16,4 +16,9 @@ class HomeController extends Controller
         $lessons = Lesson::orderBy('id')->limit(3)->get();
         return view('exam.home',compact('levels','lessons','title'));
     }
+
+    function exam(){
+        $title = 'Học tiếng Đức với Decamy, tự học tiếng Đức online';
+        return view('exam.detail',compact('title'));
+    }
 }

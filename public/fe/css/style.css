@@ -532,3 +532,185 @@ span.number-more{
     -o-transition: all .3s;
     transition: all .3s;
 }
+
+/* details */
+.detail{
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.exam-detail-block{
+    background: url(https://decamy.com/img-change/bg.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: repeat;
+    border-radius: 15px;
+    padding: 20px 30px;
+    padding-bottom: 30px;
+    width: 310px;
+    position: fixed;
+}
+.exam-detail-title{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 9px 20px;
+    background-color: rgba(255,255,255,.8);
+    border-radius: 50px;
+    margin-bottom: 0;
+    display: block;
+}
+.exam-detail-time{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 10px 0;
+    font-size: 16px;
+}
+.exam-detail-label{
+    background: rgba(255,255,255,.25);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.exam-detail-label p{
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    padding: 6px 10px;
+    color: #232323;
+}
+.exam-detail-countdown{
+    padding-bottom: 15px 
+}
+.exam-detail-countdown ul li{
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+    text-align: center;
+}
+.exam-detail-countdown ul li:before{
+    content: ':';
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    top: 0;
+    right: -19px;
+}
+.exam-detail-countdown ul li:last-child:before{
+    content: '';
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    top: 0;
+    right: -19px;
+}
+.exam-detail-number{
+    display: block;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+    color: #fff;
+}
+.exam-detail-button{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 20px;
+    background-color: #ad122c;
+    border-radius: 50px;
+    text-align: center;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.exam-detail-button:hover{
+    color: #fff;
+    background-color: #212423;
+}
+.exam-block-title{
+    margin-bottom: 0;
+    background-color: #2f2f2f;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+.exam-block-question{
+    padding-top: 40px;
+}
+.exam-block-type{
+    width: 100%;
+    padding: 45px 40px 30px 40px;
+    background-color: #f2f5f8;
+    border-radius: 8px;
+    position: relative;
+    border: solid 2px transparent;
+}
+.exam-block-type-name{
+    position: absolute;
+    top: -13px;
+    left: 25px;
+}
+.exam-block-type-name a{
+    display: inline-block;
+    padding: 6px 19px;
+    background-color: #575b84;
+    border-radius: 30px;
+    font-size: 15px;
+    color: #fff;
+}
+.exam-block-type-name a:hover{
+    color: #fff;
+}
+.exam-block-type-content{
+    margin-bottom: 50px;
+    background: #efefef;
+    border-radius: 5px;
+    padding: 10px 20px;
+    overflow: auto;
+}
+.exam-block-type-title{
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+.exam-item-question{
+    margin-bottom: 20px;
+}
+.exam-title-question{
+    margin-bottom: 20px;
+}
+.exam-number-question{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 30px;
+    display: inline-block;
+    background-color: #575b84;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.exam-label-question{
+    margin-bottom: 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 0;
+    position: relative;
+    top: 0;
+    margin-left: 15px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.exam-option-question{
+    padding-left: 50px;
+}

@@ -43,6 +43,7 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('be/js/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('be/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('be/js/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
@@ -51,6 +52,8 @@
     <!-- Custom scripts for all pages-->
     <script src="{{asset('be/js/sb-admin-2.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script> -->
     @include('admin.ajax')
 </body>
 

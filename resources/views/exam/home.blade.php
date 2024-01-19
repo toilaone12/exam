@@ -1,4 +1,5 @@
 @extends('page')
+@include('home.navbar')
 @section('content')
 <section class="words">
     <div class="container">
@@ -109,4 +110,5 @@
     </div>
     </div>
 </section>
+@include('home.footer')
 @endsection

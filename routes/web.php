@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class, 'home'])->name('page.home');
+Route::get('/exam',[HomeController::class, 'exam'])->name('page.exam');
 Route::prefix('admin')->group(function(){
     Route::get('/',[AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::prefix('lesson')->group(function(){
@@ -41,6 +44,20 @@ Route::prefix('admin')->group(function(){
         Route::get('/update',[ExamController::class, 'update'])->name('exam.update');
         Route::post('/change',[ExamController::class, 'change'])->name('exam.change');
         Route::post('/delete',[ExamController::class, 'delete'])->name('exam.delete');
+    });
+    Route::prefix('assignment')->group(function(){
+        Route::get('/',[AssignmentController::class, 'list'])->name('assignment.list');
+        Route::post('/add',[AssignmentController::class, 'add'])->name('assignment.add');
+        Route::get('/update',[AssignmentController::class, 'update'])->name('assignment.update');
+        Route::post('/change',[AssignmentController::class, 'change'])->name('assignment.change');
+        Route::post('/delete',[AssignmentController::class, 'delete'])->name('assignment.delete');
+    });
+    Route::prefix('question')->group(function(){
+        Route::get('/',[QuestionController::class, 'list'])->name('question.list');
+        Route::post('/add',[QuestionController::class, 'add'])->name('question.add');
+        Route::get('/update',[QuestionController::class, 'update'])->name('question.update');
+        Route::post('/change',[QuestionController::class, 'change'])->name('question.change');
+        Route::post('/delete',[QuestionController::class, 'delete'])->name('question.delete');
     });
 });
 // Route::get('/admin', function () {

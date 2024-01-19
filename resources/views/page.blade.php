@@ -5,9 +5,8 @@
 </head>
 <body>
     <div class="position-relative overflow-hidden">
-        @include('home.navbar')
         @yield('content')
     </div>
-    @include('home.footer')
+    @include('home.ajax')
 </body>
 </html>
