@@ -9,9 +9,11 @@
                         <li>
                             <a href="" class="item-tab router-link-exact-active router-link-active active-tab-exam">Tất cả</a>
                         </li>
-                        <li><a href="">Đọc hiểu</a></li>
-                        <li><a href="">Nghe hiểu</a></li>
-                        <li><a href="">Từ vựng - Ngữ pháp</a></li>
+                        @foreach($lessons as $as => $lesson)
+                        <li><a href="">{{$lesson->name}}</a></li>
+                        @endforeach
+                        <!-- <li><a href="">Nghe hiểu</a></li>
+                        <li><a href="">Từ vựng - Ngữ pháp</a></li> -->
                     </ul>
                 </div>
                 <div class="filter-exam">
@@ -27,15 +29,17 @@
                     <div class="list-level-exam">
                         <div class="d-flex align-items-center">
                             <span class="title-level-exam fs-15 text-dark">
-                                Trình độ: 
+                                Trình độ:
                             </span>
                             <ul class="d-flex align-items-center flex-wrap ps-0 mb-0">
                                 <li class="one-level-exam"><a href="" class="active-all">Tất cả</a></li>
-                                <li class="one-level-exam"><a href="" class="active-all">A1</a></li>
-                                <li class="one-level-exam"><a href="">A2</a></li>
+                                @foreach($levels as $key => $level)
+                                <li class="one-level-exam"><a href="">{{$level->name}}</a></li>
+                                @endforeach
+                                <!-- <li class="one-level-exam"><a href="">A2</a></li>
                                 <li class="one-level-exam"><a href="">B1</a></li>
                                 <li class="one-level-exam"><a href="">B2</a></li>
-                                <li class="one-level-exam"><a href="">C</a></li>
+                                <li class="one-level-exam"><a href="">C</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -43,8 +47,7 @@
             </div>
             <div class="col-lg-12 mt-4 mt-md-5">
                 <div class="row">
-                    @for($i = 1; $i <= 10; $i++)
-                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    @for($i = 1; $i <= 10; $i++) <div class="col-12 col-sm-6 col-lg-4 mb-4">
                         <div class="main-exam-item">
                             <div class="d-flex align-items-center">
                                 <a href="" class="d-inline-block me-2 mb-2">
@@ -77,11 +80,33 @@
                                 <div class="btn-free-exam bg-success fs-14 text-white">Miễn phí</div>
                             </div>
                         </div>
-                    </div>
-                    @endfor
                 </div>
+                @endfor
+            </div>
+            <div class="nav-list-page">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link fs-17 text-dark rounded me-2" href="#" aria-label="Previous">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link fs-17 active-all rounded me-2" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">6</a></li>
+                        <li class="page-item">
+                            <a class="page-link fs-17 text-dark rounded me-2" href="#" aria-label="Next">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
+    </div>
     </div>
 </section>
 @endsection

@@ -34,6 +34,44 @@ a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
 }
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #dcdcdc;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 50%;
+    color: #272727;
+    z-index: 100;
+    display: none;
+    border: none;
+}
+
+.group-contact {
+    display: flex;
+    flex-direction: column;
+    width: 48px;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 100;
+}
+
+.contact-message {
+    margin-top: 20px;
+    background-color: #d80f20;
+    display: flex;
+    border-radius: 50%;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    cursor: pointer;
+    transition: transform .4s;
+}
+
 .bg-scroll {
     position: fixed;
     top: 0;
@@ -428,4 +466,69 @@ span.number-more{
 .btn-free-exam{
     padding: 3px 10px;
     border-radius: 50px;
+}
+.nav-list-page{
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.page-item .page-link{
+    width: 35px;
+}
+/* footer */
+.block-footer{
+    position: relative;
+    z-index: 99;
+    background-color: #303030;
+    padding: 60px 0;
+}
+.footer-head{
+    border-bottom: 1px dashed #7e7272;
+    padding-bottom: 20px;
+}
+.title-logo{
+    font-size: 17px;
+    border-left: 1px solid #fff;
+    padding-left: 13px;
+    margin-bottom: 0;
+    color: #fbb61f;
+    font-weight: 400;
+}
+.footer-end{
+    padding-top: 20px;
+}
+.title-end{
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.footer-info ul li{
+    margin-bottom: 10px;
+}
+.footer-info ul li a{
+    margin-bottom: 10px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.title-info {
+    color: #fff;
+}
+.title-info i{
+    color: #6c757d;
+}
+.title-info:hover,
+.title-category:hover {
+    color: #fdc02d;
+}
+.title-info .hover:hover {
+    color: #fff;
+}
+.title-category{
+    color: #fff;
+    font-size: 15px;
+    display: inline-block;
+    padding-bottom: 13px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 }
