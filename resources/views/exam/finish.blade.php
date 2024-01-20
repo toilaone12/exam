@@ -33,12 +33,18 @@
             </div>
             <div class="col-12 col-md-8">
                 <h3 class="exam-block-title mt-0">Đọc đoạn văn và lựa chọn câu trả lời chính xác!</h3>
+                @php
+                    $count = 0;
+                @endphp
                 @foreach($arrayExam as $key => $exam)
+                @php
+                    $count++;
+                @endphp
                 <div class="exam-block-question">
                     <div class="d-flex flex-wrap justify-content-between">
                         <div class="exam-block-type">
                             <div class="exam-block-type-name">
-                                <a href="#">Câu số {{$key + 1}}</a>
+                                <a href="#">Câu số {{$count}}</a>
                             </div>
                             <div class="d-flex justify-content-between flex-column">
                                 <div class="exam-block-type-content">

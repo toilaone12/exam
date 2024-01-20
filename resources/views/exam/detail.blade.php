@@ -36,6 +36,9 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <h3 class="exam-block-title">Đọc đoạn văn và lựa chọn câu trả lời chính xác!</h3>
+                    @php
+                        $count = 0;
+                    @endphp
                     @foreach($arrayExam as $key => $exam)
                     <div class="exam-block-question">
                         <div class="d-flex flex-wrap justify-content-between">
