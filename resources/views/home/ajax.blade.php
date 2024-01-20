@@ -33,36 +33,29 @@
             }
         });
         // var hours = 0;
-        // var minutes = 0;
-        // var seconds = 0;
+        var minutes = parseInt($('.duration-exam').attr('data-duration'));
+        var totalSeconds = minutes * 60;  // Tổng số giây ban đầu
+        var timerInterval = setInterval(function() {
+            // Chuyển đổi tổng số giây thành giờ, phút và giây
+            var hours = Math.floor(totalSeconds / 3600); //floor lam tron xuong
+            var minutes = Math.floor((totalSeconds % 3600) / 60); //% chia lay phan du
+            // console.log((totalSeconds % 3600));
+            var seconds = totalSeconds % 60;
 
-        // // Update the timer every second
-        // var timerInterval = setInterval(function() {
-        //     // Decrease seconds
-        //     // console.log(seconds);
-        //     seconds--;
+            // Giảm giá trị của tổng số giây
+            totalSeconds--;
 
-        //     // Check if minutes and hours need to be adjusted
-        //     if (seconds < 0) {
-        //         seconds = 59;
-        //         minutes--;
+            // Kiểm tra nếu tổng số giây đã hết
+            if (totalSeconds < 0) {
+                // Timer has reached 0, you can handle this case as needed
+                clearInterval(timerInterval);
+                $('#finish-exam').submit();
+            }
 
-        //         if (minutes < 0) {
-        //             minutes = 59;
-        //             hours--;
-
-        //             if (hours < 0) {
-        //                 // Timer has reached 0, you can handle this case as needed
-        //                 clearInterval(timerInterval);
-        //                 alert('Time is up!');
-        //             }
-        //         }
-        //     }
-
-        //     // Update the HTML elements with new values
-        //     $('#hours').text(hours.toString().padStart(2, '0'));
-        //     $('#minutes').text(minutes.toString().padStart(2, '0'));
-        //     $('#seconds').text(seconds.toString().padStart(2, '0'));
-        // }, 1000); // Update every 1000 milliseconds (1 second)
+            // Update the HTML elements with new values
+            $('#hours').text(hours.toString().padStart(2, '0'));
+            $('#minutes').text(minutes.toString().padStart(2, '0'));
+            $('#seconds').text(seconds.toString().padStart(2, '0'));
+        }, 1000);
     })
 </script>

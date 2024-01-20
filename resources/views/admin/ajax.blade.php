@@ -2,6 +2,10 @@
     CKEDITOR.replace('ckeditor');
     $(document).ready(function(){
         $('#multi-question').select2();
+        $('#multi-assignment').select2();
+        $('.close-lesson').on('click',function(){
+            $('#addLesson').modal('hide');
+        })
         $('.add-lesson').on('submit',function(e){
             e.preventDefault();
             let formData = new FormData($(this)[0]);
@@ -107,6 +111,9 @@
             })
         })
         //level
+        $('.close-level').on('click',function(){
+            $('#addLevel').modal('hide');
+        })
         $('.add-level').on('submit',function(e){
             e.preventDefault();
             let formData = new FormData($(this)[0]);
@@ -212,6 +219,9 @@
             })
         })
         //question
+        $('.close-question').on('click',function(){
+            $('#addQuestion').modal('hide');
+        })
         $('.add-question').on('submit',function(e){
             e.preventDefault();
             let formData = new FormData($(this)[0]);
@@ -317,6 +327,9 @@
             })
         })
         //assignment
+        $('.close-assignment').on('click',function(){
+            $('#addAssignment').modal('hide');
+        })
         $('.add-assignment').on('submit',function(e){
             e.preventDefault();
             let formData = new FormData($(this)[0]);
@@ -423,6 +436,120 @@
                             }).then((res) => {
                                 if(res.isConfirmed){
                                     location.href="{{route('assignment.list')}}"
+                                }
+                            });
+                        },
+                        error: function(err){
+                            console.log(err);
+                        }
+                    })
+                }
+            })
+        })
+        //exam
+        $('.close-exam').on('click',function(){
+            $('#addExam').modal('hide');
+        })
+        $('#duration').on('input', function() { 
+            // Lấy giá trị từ thanh trượt
+            var durationValue = $(this).val();
+            // Cập nhật nội dung của phần tử text-duration
+            $('.text-duration').text(`(${durationValue} phút)`);
+        });
+        $('.add-exam').on('submit',function(e){
+            e.preventDefault();
+            let formData = new FormData($(this)[0]);
+            $.ajax({
+                url: "{{route('exam.add')}}",
+                method: "POST",
+                data: formData,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function(data){
+                    // console.log(data);
+                    Swal.fire({
+                        title: data.title,
+                        text: data.text,
+                        icon: data.icon,
+                        confirmButtonText: 'Đồng ý',
+                    }).then((res) => {
+                        if(res.isConfirmed){
+                            location.reload();
+                        }
+                    });
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
+        })
+        $('.change-exam').on('submit',function(e){
+            e.preventDefault();
+            let formData = new FormData($(this)[0]);
+            formData.append('id',$(this).attr('data-id'));
+            $.ajax({
+                url: "{{route('exam.change')}}",
+                method: "POST",
+                data: formData,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function(data){
+                    // console.log(data);
+                    Swal.fire({
+                        title: data.title,
+                        text: data.text,
+                        icon: data.icon,
+                        confirmButtonText: 'Đồng ý',
+                    }).then((res) => {
+                        if(res.isConfirmed){
+                            location.href="{{route('exam.list')}}"
+                        }
+                    });
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
+        })
+        $('.delete-exam').on('click',function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: "Thông báo xóa bài thi",
+                text: 'Bạn có muốn xóa bài thi này không?',
+                icon: 'info',
+                showCancelButton: true,
+                cancelButtonText: 'Hủy bỏ',
+                confirmButtonText: 'Đồng ý',
+            }).then((res) => {
+                if(res.isConfirmed){
+                    let formData = new FormData();
+                    formData.append('id',$(this).attr('data-id'));
+                    $.ajax({
+                        url: "{{route('exam.delete')}}",
+                        method: "POST",
+                        data: formData,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        success: function(data){
+                            Swal.fire({
+                                title: data.title,
+                                text: data.text,
+                                icon: data.icon
+                            }).then((res) => {
+                                if(res.isConfirmed){
+                                    location.href="{{route('exam.list')}}"
                                 }
                             });
                         },

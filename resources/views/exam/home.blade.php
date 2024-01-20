@@ -1,6 +1,6 @@
 @extends('page')
-@include('home.navbar')
 @section('content')
+@include('home.navbar')
 <section class="words">
     <div class="container">
         <div class="row">
@@ -37,10 +37,6 @@
                                 @foreach($levels as $key => $level)
                                 <li class="one-level-exam"><a href="">{{$level->name}}</a></li>
                                 @endforeach
-                                <!-- <li class="one-level-exam"><a href="">A2</a></li>
-                                <li class="one-level-exam"><a href="">B1</a></li>
-                                <li class="one-level-exam"><a href="">B2</a></li>
-                                <li class="one-level-exam"><a href="">C</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -48,28 +44,37 @@
             </div>
             <div class="col-lg-12 mt-4 mt-md-5">
                 <div class="row">
-                    @for($i = 1; $i <= 10; $i++) <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    @foreach($exams as $exam)
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
                         <div class="main-exam-item">
                             <div class="d-flex align-items-center">
+                                @foreach($lessons as $lesson)
+                                @if($exam->id_lesson == $lesson->id)
                                 <a href="" class="d-inline-block me-2 mb-2">
                                     <span class="category-title">
-                                        Đọc hiểu
+                                        {{$lesson->name}}
                                     </span>
                                 </a>
+                                @endif
+                                @endforeach
+                                @foreach($levels as $level)
+                                @if($exam->id_level == $level->id)
                                 <a href="" class="d-inline-block me-2 mb-2">
                                     <span class="level-title">
-                                        B1
+                                        {{$level->name}}
                                     </span>
                                 </a>
+                                @endif
+                                @endforeach
                             </div>
                             <h3 class="title-exam">
-                                <a href="">
-                                    Test 40 - Lesen - Teil 5
+                                <a href="{{route('page.exam',['id'=>$exam->id])}}">
+                                    {{$exam->name}}
                                 </a>
                             </h3>
                             <div class="time-exam fs-14 text-secondary">
                                 <i class="fa-regular fa-clock"></i>
-                                <span class="ms-2">10 phút</span>
+                                <span class="ms-2">{{$exam->duration}} phút</span>
                             </div>
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center">
@@ -81,33 +86,12 @@
                                 <div class="btn-free-exam bg-success fs-14 text-white">Miễn phí</div>
                             </div>
                         </div>
+                    </div>
+                    @endforeach
                 </div>
-                @endfor
-            </div>
-            <div class="nav-list-page">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link fs-17 text-dark rounded me-2" href="#" aria-label="Previous">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link fs-17 active-all rounded me-2" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link fs-17 text-dark rounded me-2" href="#">6</a></li>
-                        <li class="page-item">
-                            <a class="page-link fs-17 text-dark rounded me-2" href="#" aria-label="Next">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                {!!$exams->links('pagination.home')!!}
             </div>
         </div>
-    </div>
     </div>
 </section>
 @include('home.footer')

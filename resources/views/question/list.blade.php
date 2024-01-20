@@ -61,7 +61,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Thêm câu hỏi</h5>
-                <button type="button" class="border-0 btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">x</button>
+                <button type="button" class="border-0 btn btn-outline-secondary close-question" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <form class="add-question">
                 <div class="modal-body">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-secondary close-question" data-bs-dismiss="modal">Đóng</button>
                     <button type="submit" class="btn btn-primary">Xác nhận</button>
                 </div>
             </form>

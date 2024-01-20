@@ -1,8 +1,5 @@
 @extends('dashboard')
 @section('content')
-<?php
-use App\Models\Question;
-?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
@@ -35,7 +32,7 @@ use App\Models\Question;
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button> -->
                     <button type="submit" class="btn btn-primary">Xác nhận</button>
                 </div>
             </form>

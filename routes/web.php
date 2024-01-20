@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'home'])->name('page.home');
 Route::get('/exam',[HomeController::class, 'exam'])->name('page.exam');
+Route::post('/finish',[ExamController::class, 'finish'])->name('exam.finish');
 Route::prefix('admin')->group(function(){
     Route::get('/',[AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::prefix('lesson')->group(function(){

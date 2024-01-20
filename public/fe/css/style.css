@@ -447,6 +447,9 @@ h3.title-exam a {
     -o-transition: all .3s;
     transition: all .3s;
 }
+h3.title-exam a:hover{
+    color: #fdc02d;
+}
 .time-exam{
     padding-bottom: 20px;
 }
@@ -579,7 +582,8 @@ span.number-more{
     padding: 6px 10px;
     color: #232323;
 }
-.exam-detail-countdown{
+.exam-detail-countdown,
+.exam-detail-finish{
     padding-bottom: 15px 
 }
 .exam-detail-countdown ul li{
@@ -622,6 +626,7 @@ span.number-more{
     -webkit-transition: all .4s;
     -o-transition: all .4s;
     transition: all .4s;
+    cursor: pointer;
 }
 
 .exam-detail-button:hover{
@@ -713,4 +718,12 @@ span.number-more{
 }
 .exam-option-question{
     padding-left: 50px;
+}
+.exam-detail-correct,
+.exam-detail-wrong,
+.exam-detail-no-choose{
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
 }
